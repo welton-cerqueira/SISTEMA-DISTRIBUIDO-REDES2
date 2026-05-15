@@ -125,10 +125,6 @@ deploy_broker() {
         docker run -d --name broker --network host \
             -e LAB_IPS='$lab_ips_str' \
             broker:latest \
-            -id=broker-${broker_id} \
-            -porta-tcp=$tcp_port \
-            -porta-udp=$udp_port \
-            -porta-ctrl=$sensor_port
     "
     
     if [ -n "$SSH_PASS" ]; then
